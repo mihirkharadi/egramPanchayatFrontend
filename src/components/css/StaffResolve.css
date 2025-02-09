@@ -1,0 +1,26 @@
+@media screen and (max-width: 992px)
+{
+
+
+
+table tbody tr .resolve1::before {
+  content: "Name :-"  ;
+  font-weight: 700;
+}
+table tbody tr .resolve2::before {
+  content: "Email :-";
+  font-weight: 700;
+}
+table tbody tr .resolve3::before {
+  content: "Complaint :-";
+  font-weight: 700;
+}
+table tbody tr .resolve4::before{
+  content: "Status :-" ;
+  font-weight: 700;
+}
+table tbody tr .resolve5::before{
+  content: "Resolve :-" ;
+  font-weight: 700;
+}
+}

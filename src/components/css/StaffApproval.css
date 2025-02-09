@@ -1,0 +1,40 @@
+
+@media screen and (max-width: 992px) {
+table tbody tr .pending1:before {
+    content: "Name :"  ;
+    font-weight: 700;
+  }
+  table tbody tr .pending2:before {
+    content: " Number : ";
+    font-weight: 700;
+  }
+  table tbody tr .pending3:before {
+    content: "Email :";
+    font-weight: 700;
+  }
+  table tbody tr .pending4:before{
+    content: "Address :" ;
+    font-weight: 700;
+  }
+  table tbody tr .pending5:before{
+    content: "Pincode :" ;
+    font-weight: 700;
+  }
+  table tbody tr .pending6:before{
+    content: "Verify :" ;
+    font-weight: 700;
+    text-align: left;
+  }
+  table tbody tr .pending7:before{
+    content: "Status :" ;
+    font-weight: 700;
+    text-align: left;
+  }
+}
+
+.approvalBtn button
+{
+ color: black;
+ background-color: white;
+
+}

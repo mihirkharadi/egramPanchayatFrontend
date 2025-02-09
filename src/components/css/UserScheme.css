@@ -1,0 +1,40 @@
+input
+{
+    padding: 0.6rem;
+            font-size: 1rem;
+            border-radius: 0.5rem;
+           
+            outline: auto !important;
+            width: auto;
+            
+}
+
+.submitBtn
+{
+    background-color: #36304a;
+    color: white;
+    max-width: 6rem;
+}
+.backBtn
+{
+    background-color: #36304a;
+    color: white;
+    max-width: 6rem;
+  margin-top: 10px;
+}
+
+.loader {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #3498db;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  animation: spin 0.6s linear infinite;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

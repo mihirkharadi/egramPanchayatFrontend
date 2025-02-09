@@ -1,0 +1,52 @@
+*
+{
+  font-family: "Poppins", serif;
+  font-weight: 400;
+}
+
+.container0{
+  background-color:  #A1D6E2;
+  height: 100vh;
+  width: auto ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+
+  & .logo
+  {
+    display: grid;
+    place-items: center;
+    height: 20rem;
+    width: 18rem;
+  }
+
+ 
+& .buttons
+{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items:center ;
+  
+
+  & .btns
+  {
+    width: 15rem;
+    color: black;
+    background-color: #fff;
+    padding: 0.5rem 0;
+    border-radius: 0.5rem;
+    border: none;
+   
+   
+   
+ 
+  }
+}
+
+}
+
+
+

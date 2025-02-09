@@ -1,0 +1,87 @@
+.container1
+{
+    height: 100vh;
+    width: 100vw;
+    background-color:  #A1D6E2;
+    
+    display: grid;
+    place-items: center;
+   
+   & .login-container
+   {
+    height: 30rem;
+    width: 17rem;
+    background-color: white ;
+    border: 2px solid;
+    border-radius: 1.2rem;
+    display: flex;
+      flex-direction: column;    
+      align-items: center;
+      justify-content: space-around;
+     box-shadow: 2px 2px 10px black;
+}
+& .fa-solid
+{
+ 
+    color:#A1D6E2;
+    font-size: 5rem;
+}
+& .input
+{
+    display: flex;
+    flex-direction: column;
+
+}
+ 
+
+    & h1{
+        color: #A1D6E2;
+        font-size: 2.4rem;
+    }
+
+    & input
+    {
+        width: 12rem;
+        color: white;
+        background-color: #A1D6E2;
+        border: none;
+        margin-top: 1rem;
+        padding: 0.4rem 0.5rem;
+        border-radius: 0.4rem;
+        outline: none;
+        letter-spacing: 0.1rem;
+        font-weight: 600;
+    }
+    & .btnn
+    {
+        
+        background-color: #A1D6E2;
+        color: white;
+        width: 10rem;
+        border: none;
+        padding: 0.5rem 0;
+        border-radius: 0.5rem;
+      
+    }
+
+    
+}
+
+*
+{
+    font-family: "Poppins", serif;
+    font-weight: 400;
+  
+}
+
+button
+{
+    background-color: white;
+    color: #535353;
+    width: 10rem;
+    border: none;
+    padding: 0.5rem 0;
+    border-radius: 0.5rem;
+    font-weight: 700;
+
+}

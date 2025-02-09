@@ -1,0 +1,28 @@
+@media screen and (max-width: 992px)
+{
+
+
+
+table tbody tr .record1:before {
+  content: "Id :-"  ;
+  font-weight: 700;
+}
+table tbody tr .record2:before {
+  content: "Name :-";
+  font-weight: 700;
+}
+table tbody tr .record3:before {
+  content: "Task Date :-";
+  font-weight: 700;
+}
+table tbody tr .record4:before{
+  content: "Task Details :-" ;
+  font-weight: 700;
+}
+table tbody tr .record5:before{
+  content: "Cost :-" ;
+  font-weight: 700;
+}
+
+
+}

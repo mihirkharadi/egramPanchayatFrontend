@@ -1,0 +1,61 @@
+.btnApp
+{
+    background-color:#a1d6e2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 0;
+    gap: 10px;
+   
+    & button
+    {
+        cursor: pointer;
+        background-color: #36304a;
+        color: white;
+    }
+}
+
+
+.column7
+{
+    width: 180px;
+    text-align: center;
+}
+@media screen and (max-width: 992px)
+{
+
+
+
+table tbody tr .application1:before {
+  content: "Name :"  ;
+  font-weight: 700;
+}
+table tbody tr .application2:before {
+  content: "Email :";
+  font-weight: 700;
+}
+table tbody tr .application3:before {
+  content: "Number :";
+  font-weight: 700;
+}
+table tbody tr .application4:before{
+  content: "Address :" ;
+  font-weight: 700;
+}
+table tbody tr .application5:before{
+  content: "PinCode :" ;
+  font-weight: 700;
+}
+table tbody tr .application6:before{
+    content: "Status :" ;
+    font-weight: 700;
+    
+  }
+  table tbody tr .application7:before{
+    content: "Remarks :" ;
+    font-weight: 700;
+    text-align: left;
+  }
+
+
+}
