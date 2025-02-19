@@ -12,7 +12,7 @@ useEffect(()=>
   const getRecord=async()=>
   {
     const token=localStorage.getItem('token');
-    const response=await axios.get('http://localhost:2000/api/users/record-all',
+    const response=await axios.get('https://e-gram-panchayat.vercel.app/api/users/record-all',
      {headers:{Authorization:`Bearer ${token}`}}
     )
     

@@ -26,7 +26,7 @@ const UserScheme = () => {
   const fileInputRef = useRef(null);
 
   useEffect(() => {
-    axios.get('http://localhost:2000/api/users/scheme-all')
+    axios.get('https://e-gram-panchayat.vercel.app/api/users/scheme-all')
       .then(response => {
         setState(prevState => ({
           ...prevState,
@@ -98,7 +98,7 @@ const UserScheme = () => {
         data.append("documents", file);
       });
 
-      await axios.post('http://localhost:2000/api/users/application', data, {
+      await axios.post('https://e-gram-panchayat.vercel.app/api/users/application', data, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`,
@@ -136,7 +136,7 @@ const UserScheme = () => {
       <Navbar />
       {state.isApply === 'no' && (
         <>
-          {state.schemes.length > 0 ? (
+         
             <div className="limiter">
               <div className="container-table100">
                 <div className="wrap-table100">
@@ -153,7 +153,8 @@ const UserScheme = () => {
                         </tr>
                       </thead>
                       <tbody>
-                        {state.schemes.map((scheme) => (
+                      {state.schemes.length > 0 ? (
+                        (state.schemes.map((scheme) => (
                           <tr key={scheme._id}>
                             <td className="column1 scheme1">{scheme.id}</td>
                             <td className="column2 scheme2">{scheme.name}</td>
@@ -164,16 +165,21 @@ const UserScheme = () => {
                               <button onClick={handleView}>Apply</button>
                             </td>
                           </tr>
-                        ))}
+                        )))
+                      ) : (
+
+                        <tr>
+                          <td colSpan="6">No schemes</td>
+                        </tr>
+                     
+                      )}
                       </tbody>
                     </table>
                   </div>
                 </div>
               </div>
             </div>
-          ) : (
-            <p>No schemes</p>
-          )}
+         
         </>
       )}
 

@@ -18,7 +18,7 @@ const Dashboard = () => {
     }
 
     axios
-      .get('http://localhost:2000/api/users/profile', {
+      .get('https://e-gram-panchayat.vercel.app/api/users/profile', {
         headers: { Authorization: `Bearer ${token}` }, 
       })
       .then((response) => {

@@ -35,7 +35,7 @@ const UserLoginPage = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:2000/api/users/login', {
+      const response = await axios.post('https://e-gram-panchayat.vercel.app/api/users/login', {
         email: formData.username,
         password: formData.password,
         
@@ -74,7 +74,7 @@ const UserLoginPage = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:2000/api/users/signup', {
+      const response = await axios.post('https://e-gram-panchayat.vercel.app/api/users/signup', {
         name:formData.name,
         email: formData.signupEmail,
         password: formData.signupPassword,
@@ -109,7 +109,7 @@ const UserLoginPage = () => {
     }
 
     try {
-      await axios.post('http://localhost:2000/api/users/forgotPassword', {
+      await axios.post('https://e-gram-panchayat.vercel.app/api/users/forgotPassword', {
         email: formData.mailChange,
         newPassword: formData.passChange,
       });

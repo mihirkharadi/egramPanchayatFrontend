@@ -30,7 +30,7 @@ const StaffRecords = () => {
     try {
       const token=localStorage.getItem('token');
       
- const response=await axios.post("http://localhost:2000/api/users/record-add",
+ const response=await axios.post("https://e-gram-panchayat.vercel.app/api/users/record-add",
   {
     recordId:records.recordId,
     cost:records.cost,
@@ -70,7 +70,7 @@ alert('record added successfully');
     try {
       setIsRecord("show");
       const token=localStorage.getItem('token');
-       const response=await axios.get('http://localhost:2000/api/users/record-all',
+       const response=await axios.get('https://e-gram-panchayat.vercel.app/api/users/record-all',
         {
           headers:{Authorization:`Bearer ${token}`},
         }

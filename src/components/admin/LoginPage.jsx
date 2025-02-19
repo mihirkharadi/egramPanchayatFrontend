@@ -29,7 +29,7 @@ const LoginPage = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:2000/api/users/admin-login', {
+      const response = await axios.post('https://e-gram-panchayat.vercel.app/api/users/admin-login', {
 
         email: formData.email,
         password: formData.password,

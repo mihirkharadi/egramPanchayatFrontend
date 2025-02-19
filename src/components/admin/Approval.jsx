@@ -19,7 +19,7 @@ const Approval = () => {
 const handleData=async()=>
 {
   try {
-   const response= await axios.get('http://localhost:2000/api/users/get-application',
+   const response= await axios.get('https://e-gram-panchayat.vercel.app/api/users/get-application',
     {
       headers:
       {Authorization:`Bearer ${localStorage.getItem('token')}`
@@ -52,7 +52,7 @@ const handleApprove=async()=>
   try {
      
          const response=await axios.patch(
-          `http://localhost:2000/api/users/admin-verify/${selectedUser._id}`,
+          `https://e-gram-panchayat.vercel.app/api/users/admin-verify/${selectedUser._id}`,
           {status:'officer_approved'},
           {
             headers:{
@@ -80,7 +80,7 @@ const handleReject=async()=>
          {
           try {
 
-            const response=await axios.patch(`http://localhost:2000/api/users/admin-reject/${selectedUser._id}`,
+            const response=await axios.patch(`https://e-gram-panchayat.vercel.app/api/users/admin-reject/${selectedUser._id}`,
               {status:'rejected',
                 remarks:remarks,
               },

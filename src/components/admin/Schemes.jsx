@@ -21,7 +21,7 @@ const Schemes = () => {
 
   const handleShow = () => {
     
-    axios.get("http://localhost:2000/api/users/scheme-all")
+    axios.get("https://e-gram-panchayat.vercel.app/api/users/scheme-all")
       .then((response) => {
        
         setState((prevState) => ({
@@ -52,7 +52,7 @@ const Schemes = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:2000/api/users/scheme-add", entries);
+      const response = await axios.post("https://e-gram-panchayat.vercel.app/api/users/scheme-add", entries);
       setState((prevState) => ({
         entries: { id: "", name: "", reqDocuments: "", eligibility: "", lastDate: "" },
         newEntries: [response.data, ...prevState.newEntries],
@@ -80,7 +80,7 @@ const Schemes = () => {
     try {
       console.log(_id);
       
-      await axios.delete(`http://localhost:2000/api/users/delete/${_id}`);
+      await axios.delete(`https://e-gram-panchayat.vercel.app/api/users/delete/${_id}`);
      
       setState((prevState) => ({
         ...prevState,

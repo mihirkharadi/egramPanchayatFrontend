@@ -10,7 +10,7 @@ const StaffResolve = () => {
  
   useEffect(() => {
     axios
-      .get('http://localhost:2000/api/users/complaint-all',
+      .get('https://e-gram-panchayat.vercel.app/api/users/complaint-all',
         {
           headers:{
             Authorization:`Bearer ${localStorage.getItem("token")}`
@@ -30,7 +30,7 @@ const StaffResolve = () => {
     console.log(_id);
     
     try {
-      const response = await axios.put(`http://localhost:2000/api/users/complaints/${_id}/resolve`);
+      const response = await axios.put(`https://e-gram-panchayat.vercel.app/api/users/complaints/${_id}/resolve`);
       console.log(response.data.complaint);
       
       
@@ -55,7 +55,7 @@ const StaffResolve = () => {
     <>
       <Navbar />
       <div>
-        {complaints.length > 0 ? (
+       
           <div className="limiter">
             <div className="container-table100">
               <div className="wrap-table100">
@@ -71,7 +71,8 @@ const StaffResolve = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      {complaints.map((complaint) => (
+                    {complaints.length > 0 ? (
+                      complaints.map((complaint) => (
                         <tr className="res" key={complaint._id}>
                           <td className="column1 resolve1">{complaint.name}</td>
                           <td className="column2 resolve2">{complaint.contactDetail}</td>
@@ -87,16 +88,21 @@ const StaffResolve = () => {
                             </button>
                           </td>
                         </tr>
-                      ))}
+                      ))
+                    ): (
+                      
+                        <tr>
+                        <td colSpan="6">No pending complaints .</td>
+                      </tr>
+                    
+                      )}
                     </tbody>
                   </table>
                 </div>
               </div>
             </div>
           </div>
-        ) : (
-          <p>No pending complaints</p>
-        )}
+       
       </div>
       <Footer />
     </>

@@ -20,7 +20,7 @@ const ApplicationStatus = () => {
     {
         setIsComplaint('yes')
 
-        await axios.get('http://localhost:2000/api/users/get-application',
+        await axios.get('https://e-gram-panchayat.vercel.app/api/users/get-application',
           {
             headers:{
               Authorization:`Bearer ${localStorage.getItem("token")}`
@@ -39,7 +39,7 @@ const ApplicationStatus = () => {
     const handlePrevButton=async()=>
     {
       setIsComplaint('no')
-         await axios.get("http://localhost:2000/api/users/complaint-all",
+         await axios.get("https://e-gram-panchayat.vercel.app/api/users/complaint-all",
           {
             headers:{
               Authorization:`Bearer ${localStorage.getItem("token")}`

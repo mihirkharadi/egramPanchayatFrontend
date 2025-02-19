@@ -19,7 +19,7 @@ const StaffApproval = () => {
 const handleData=async()=>
 {
   try {
-   const response= await axios.get('http://localhost:2000/api/users/get-application',
+   const response= await axios.get('https://e-gram-panchayat.vercel.app/api/users/get-application',
     {
       headers:
       {Authorization:`Bearer ${localStorage.getItem('token')}`
@@ -51,7 +51,7 @@ const handleApprove=async()=>
      if(!selectedUser) return;
      try {
          const response=await axios.patch(
-          `http://localhost:2000/api/users/staff-verify/${selectedUser._id}`,
+          `https://e-gram-panchayat.vercel.app/api/users/staff-verify/${selectedUser._id}`,
           {status:'staff_verified'},
           {
             headers:{
@@ -79,7 +79,7 @@ const handleReject=async()=>
          {
           try {
 
-            const response=await axios.patch(`http://localhost:2000/api/users/staff-reject/${selectedUser._id}`,
+            const response=await axios.patch(`https://e-gram-panchayat.vercel.app/api/users/staff-reject/${selectedUser._id}`,
               {status:'rejected',
                 remarks:remarks,
               },
@@ -106,7 +106,7 @@ const handleReject=async()=>
         <div className="container-table100">
           <div className="wrap-table100">
            
-            {!selectedUser && schemes.length > 0 && (
+           
               <div className="table100">
                 <table>
                   <thead>
@@ -121,7 +121,8 @@ const handleReject=async()=>
                     </tr>
                   </thead>
                   <tbody>
-                    {schemes.map((curElem) => (
+                  {!selectedUser && schemes.length > 0 ? (
+                    schemes.map((curElem) => (
                       <tr className="res" key={curElem._id}>
                         <td className="column1 pending1">{curElem.name}</td>
                         <td className="column2 pending2">{curElem.phone}</td>
@@ -136,51 +137,57 @@ const handleReject=async()=>
                           </button>
                         </td>
                       </tr>
-                    ))}
-                  </tbody>
+                    ))
+                 
+            ):(
+              <tr>
+              <td colSpan="6">No pending complaints .</td>
+            </tr>
+            )
+          }
+             </tbody>
                 </table>
               </div>
-            )}
 
         
-            {selectedUser && (
+{selectedUser && (
 
               
               
-              <>
-              
-            {  console.log(selectedUser)}
-              
-              <div className=" p-3 rounded-lg details-box mb-3 bg-gray-900 shadow-md" >
-              <h1 className="text-center text-white text-[25px] mb-2">Applicants Details</h1>
-              <hr  className="mb-4"/>
-                <ul className="flex gap-3 flex-wrap  mb-5" >
-                  <li className="text-left text-white p-2"><strong>Name:</strong> {selectedUser.name}</li>
-                  <li className="text-left text-white p-2"><strong>Phone:</strong> {selectedUser.phone}</li>
-                  <li className="text-left text-white p-2"><strong>Email:</strong> {selectedUser.email}</li>
-                  <li className="text-left text-white p-2"><strong>Address:</strong> {selectedUser.address}</li>
-                  <li className="text-left text-white p-2"><strong>PinCode:</strong> {selectedUser.pinCode}</li>
-                  <li className="text-left text-white p-2"><strong>Status :</strong> {selectedUser.status}</li>
-                  
-                  
-                </ul>
-                <h1 className="text-center text-white text-[25px] mb-2 ">Documents</h1>
-                <hr  className="mb-4"/>
-                {selectedUser.documents && selectedUser.documents.length > 0 && (
-                    <div className="image-preview mb-3 gap-4 flex flex-wrap justify-center">
-                      {selectedUser.documents.map((url, _id) => (
-                        <div className="flex flex-col items-center" key={_id}>
-                          <img
-                            src={url.url}
-                            alt={`Uploaded Document`}
-                            style={{ width: "250px", height: "200px", objectFit: "contain" }}
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  )}
-   
-  
+<>
+
+{  console.log(selectedUser)}
+
+<div className=" p-3 rounded-lg details-box mb-3 bg-gray-900 shadow-md" >
+<h1 className="text-center text-white text-[25px] mb-2">Applicants Details</h1>
+<hr  className="mb-4"/>
+  <ul className="flex gap-3 flex-wrap  mb-5" >
+    <li className="text-left text-white p-2"><strong>Name:</strong> {selectedUser.name}</li>
+    <li className="text-left text-white p-2"><strong>Phone:</strong> {selectedUser.phone}</li>
+    <li className="text-left text-white p-2"><strong>Email:</strong> {selectedUser.email}</li>
+    <li className="text-left text-white p-2"><strong>Address:</strong> {selectedUser.address}</li>
+    <li className="text-left text-white p-2"><strong>PinCode:</strong> {selectedUser.pinCode}</li>
+    <li className="text-left text-white p-2"><strong>Status :</strong> {selectedUser.status}</li>
+    
+    
+  </ul>
+  <h1 className="text-center text-white text-[25px] mb-2 ">Documents</h1>
+  <hr  className="mb-4"/>
+  {selectedUser.documents && selectedUser.documents.length > 0 && (
+      <div className="image-preview mb-3 gap-4 flex flex-wrap justify-center">
+        {selectedUser.documents.map((url, _id) => (
+          <div className="flex flex-col items-center" key={_id}>
+            <img
+              src={url.url}
+              alt={`Uploaded Document`}
+              style={{ width: "250px", height: "200px", objectFit: "contain" }}
+            />
+          </div>
+        ))}
+      </div>
+    )}
+
+
 <div className=" flex flex-wrap gap-4  justify-center p-2 approvalBtn">
 <button onClick={handleApprove}>Approve</button>
 
@@ -191,21 +198,16 @@ const handleReject=async()=>
 
 
 
-                
-              </div>
+  
+</div>
 
-              <button className="btn-back" onClick={handleBack}>
-             Back
-           </button>
+<button className="btn-back" onClick={handleBack}>
+Back
+</button>
 </>
-             
-            )}
 
-            {schemes.length === 0 &&<><p>No pending approval schemes</p>
-             <button className="btn-back" onClick={handleBack}>
-             Back
-           </button>
-           </>}
+)}
+
           </div>
         </div>
       </div>

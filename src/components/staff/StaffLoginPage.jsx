@@ -29,7 +29,7 @@ const StaffLoginPage = () => {
   }
 
 try{
-  const response=await axios.post('http://localhost:2000/api/users/staff-login',
+  const response=await axios.post('https://e-gram-panchayat.vercel.app/api/users/staff-login',
     {
       email:staffData.email,
       password:staffData.password,

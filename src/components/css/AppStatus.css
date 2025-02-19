@@ -12,7 +12,16 @@
         cursor: pointer;
         background-color: #36304a;
         color: white;
+
+        &:focus
+        {
+         
+         box-shadow: 5px 4px 5px black;
+        }
     }
+     
+
+    
 }
 
 
